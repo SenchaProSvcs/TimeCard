@@ -1,0 +1,26 @@
+# OS X
+.DS_Store
+
+# Eclipse metadata
+#.project
+#.settings
+#.classpath
+
+# Build output
+target/
+war/
+doc/
+
+SbmaDb/
+.sass-cache/
+
+# Working directories
+.gwt/
+.gwt-tmp/
+gwt-unitCache/
+www-test/
+tomcat/
+
+#IntelliJ IDEA metadata
+*.iml
+.idea

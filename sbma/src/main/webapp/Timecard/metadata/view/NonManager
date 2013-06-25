@@ -1,0 +1,68 @@
+{
+    "type": "container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "NonManager",
+        "layout": "vbox"
+    },
+    "id": "ExtBox1-ext-gen7255",
+    "designerId": "aac13a90-3699-4f61-9105-f06f88ee7d20",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1
+            },
+            "designerId": "fb6eea97-adf8-446a-9d72-de629f2c2f0a",
+            "masterInstanceId": "ExtBox1-ext-gen12259"
+        },
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|pack": "center",
+                "designer|userClassName": "MyToolbar1",
+                "docked": "bottom"
+            },
+            "designerId": "0a1e2786-58c3-4da6-9a46-7ac91b4644aa",
+            "cn": [
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "xst": "logout",
+                        "designer|userClassName": "MyButton",
+                        "iconCls": "action",
+                        "iconMask": true,
+                        "text": "Logout"
+                    },
+                    "designerId": "03b08d73-6cff-4d20-af91-e1035b75d176",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "xst",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

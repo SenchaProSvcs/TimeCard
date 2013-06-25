@@ -1,0 +1,214 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Login"
+    },
+    "id": "ExtBox1-ext-gen6298",
+    "designerId": "d3606eb7-4150-42e5-b28f-718ce4573399",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onLoginRequest",
+                "fn": "onLoginRequest",
+                "implHandler": [
+                    "this.validateLoginRequest();"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "[xst=login]"
+            },
+            "designerId": "75b383a4-17b7-4091-9d5e-09995f6711aa"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "loginView",
+                "ref": "loginView",
+                "selector": "[xst=loginView]"
+            },
+            "designerId": "6e9a3ca8-e676-4453-9333-43c5cb91ed0e"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "accountInformation",
+                "ref": "accountInformation",
+                "selector": "[xst=accountInformation]"
+            },
+            "designerId": "733ae72e-3657-4202-914e-392616bd9ec1"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "validateLoginRequest",
+                "fn": "validateLoginRequest",
+                "implHandler": [
+                    "var credentialRequestModel = Ext.create(\"Timecard.model.CredentialRequest\");",
+                    "this.getLoginView().updateRecord(credentialRequestModel);",
+                    "var errors = credentialRequestModel.validate();",
+                    "if (errors.getCount() == 0) {",
+                    "    this.login(credentialRequestModel);",
+                    "} else {",
+                    "    this.displayValidationErrors(errors);",
+                    "}"
+                ]
+            },
+            "designerId": "2b00919d-f679-438b-a7dd-5839e08afc89"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "login",
+                "fn": "login",
+                "designer|params": [
+                    "credentialRequestModel"
+                ],
+                "implHandler": [
+                    "//var me = this;",
+                    "",
+                    "this.getLoginView().setMasked({",
+                    "    message: 'Authenticating...'",
+                    "});",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    method: 'POST',",
+                    "    url: '/sbma/rest/credential',",
+                    "    timeout: 60000,",
+                    "    jsonData: credentialRequestModel.getData(),",
+                    "    scope: this,",
+                    "    success: this.onLoginCallback,",
+                    "    failure: function() {",
+                    "        Ext.Msg.alert(\"Login\", \"Cannot communicate with server\");",
+                    "        //me.getLoginView().unmask();",
+                    "        this.getLoginView().unmask();",
+                    "    }",
+                    "});"
+                ]
+            },
+            "designerId": "a4164e30-e083-406c-baa8-cd9b5eb09c08"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "displayValidationErrors",
+                "fn": "displayValidationErrors",
+                "designer|params": [
+                    "errors"
+                ],
+                "implHandler": [
+                    "var error = errors.get(0);",
+                    "this.displayError(error.getField(), error.getMessage());"
+                ]
+            },
+            "designerId": "e45acd1d-424e-4bc5-b0da-9cb0f38a84c0"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "displayError",
+                "fn": "displayError",
+                "designer|params": [
+                    "errorFieldName, errorMessage"
+                ],
+                "implHandler": [
+                    "Ext.Msg.alert(errorFieldName, errorMessage, function() {",
+                    "    var accountInformation = this.getAccountInformation();",
+                    "    var errorField = accountInformation.getComponent(errorFieldName);",
+                    "    if (errorField != null) {",
+                    "        errorField.focus();",
+                    "    }",
+                    "}, this);"
+                ]
+            },
+            "designerId": "39f7191f-5d91-449c-9361-713cb1f0bbdb"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onLoginCallback",
+                "fn": "onLoginCallback",
+                "designer|params": [
+                    "response"
+                ],
+                "implHandler": [
+                    "this.getLoginView().unmask();",
+                    "var credentialResponse = Ext.decode(response.responseText);",
+                    "if (credentialResponse.authenticationToken === null) {",
+                    "    this.displayError('Login', 'Invalid user name or password');",
+                    "} else {",
+                    "    var credentialResponseModel = Ext.create('Timecard.model.CredentialResponse', credentialResponse);",
+                    "    Timecard.controller.EventBus.fireLoginEvent(credentialResponseModel);",
+                    "}"
+                ]
+            },
+            "designerId": "ccaed471-4326-439f-b123-3fea2af3c1b1"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onPasswordfieldKeyup",
+                "fn": "onPasswordfieldKeyup",
+                "implHandler": [
+                    "if (e.event.keyCode == 13){",
+                    "    this.validateLoginRequest();",
+                    "}"
+                ],
+                "name": "keyup",
+                "designer|targetType": "Ext.field.Password",
+                "designer|controlQuery": "[xst=loginPassword]"
+            },
+            "designerId": "03e796ea-8c58-4f60-8238-beafcdb96331"
+        }
+    ]
+}

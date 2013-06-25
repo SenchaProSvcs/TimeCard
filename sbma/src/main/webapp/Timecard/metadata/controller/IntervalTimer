@@ -1,0 +1,128 @@
+{
+    "type": "class",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "interval": 1000,
+        "fn": [
+            "function() {",
+            "    console.log('IntervalTimer: config property \"fn\" is not defined');",
+            "}"
+        ],
+        "fnScope": [
+            "this"
+        ],
+        "designer|userClassName": "IntervalTimer"
+    },
+    "configAlternates": {
+        "test": "object",
+        "fn": "object",
+        "fnScope": "object"
+    },
+    "id": "ExtBox1-ext-gen33264",
+    "designerId": "71447af2-ec15-4754-967e-e430e6fd7fa9",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "interval",
+            "type": "number"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "anotherTest",
+            "type": false
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "fn",
+            "type": "number"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "scope",
+            "type": "object"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "fnScope",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "start",
+                "fn": "start",
+                "implHandler": [
+                    "this.run();"
+                ]
+            },
+            "designerId": "04bae8c4-b00f-47e3-a971-e0971a0784b8"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "stop",
+                "fn": "stop",
+                "implHandler": [
+                    "this.task.cancel();"
+                ]
+            },
+            "designerId": "0b3fa2ea-618d-4f30-89cb-80f4a08fb1c5"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "run",
+                "fn": "run",
+                "implHandler": [
+                    "this.task = Ext.create('Ext.util.DelayedTask', function () {",
+                    "    this.getFn().call(this.getFnScope());",
+                    "    this.run();",
+                    "}, this);",
+                    "",
+                    "this.task.delay(this.getInterval());"
+                ]
+            },
+            "designerId": "64af993e-6179-449d-a4c6-0a9bc793e34d"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "constructor",
+                "fn": "constructor",
+                "designer|params": [
+                    "config"
+                ],
+                "implHandler": [
+                    "this.initConfig(config);"
+                ]
+            },
+            "designerId": "275429c2-4a62-460d-8d65-550dcd8dc8a4"
+        }
+    ]
+}

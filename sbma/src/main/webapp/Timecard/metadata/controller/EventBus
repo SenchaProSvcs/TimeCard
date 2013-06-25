@@ -1,0 +1,112 @@
+{
+    "type": "class",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "EventBus",
+        "mixins": [
+            "['Ext.mixin.Observable']"
+        ],
+        "singleton": true
+    },
+    "id": "ExtBox1-ext-gen25544",
+    "designerId": "92b03a76-5cdb-401d-b073-0a6dee9ec35e",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "constructor",
+                "fn": "constructor",
+                "designer|params": [
+                    "config"
+                ],
+                "implHandler": [
+                    "this.initConfig(config);"
+                ]
+            },
+            "designerId": "7d6ccc95-e2be-43a0-8ec4-63d48cd6e62e"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "fireLoginEvent",
+                "fn": "fireLoginEvent",
+                "designer|params": [
+                    "credentialResponseModel"
+                ],
+                "implHandler": [
+                    "this.fireEvent('login', credentialResponseModel);"
+                ]
+            },
+            "designerId": "f2968c41-7f86-48c2-a331-d09a81086f80"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "addLoginListener",
+                "fn": "addLoginListener",
+                "designer|params": [
+                    "fn",
+                    "scope"
+                ],
+                "implHandler": [
+                    "this.addListener('login', fn, scope);"
+                ]
+            },
+            "designerId": "20ccb16a-f579-45ec-84d2-2bf8ffe70f9e"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "fireLogoutEvent",
+                "fn": "fireLogoutEvent",
+                "implHandler": [
+                    "this.fireEvent('logout');"
+                ]
+            },
+            "designerId": "b581fb41-2a0f-4ca7-b03a-383a2af7af17"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "addLogoutListener",
+                "fn": "addLogoutListener",
+                "designer|params": [
+                    "fn, scope"
+                ],
+                "implHandler": [
+                    "this.addListener('logout', fn, scope);"
+                ]
+            },
+            "designerId": "c7d1b5e4-4dff-4848-afac-736e785c6371"
+        }
+    ]
+}

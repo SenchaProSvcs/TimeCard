@@ -1,0 +1,64 @@
+{
+    "type": "application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "requires": [
+            "Timecard.controller.EventBus"
+        ],
+        "models": [
+            "CredentialRequest",
+            "TimeCardItem",
+            "Constants",
+            "CredentialResponse",
+            "Employee"
+        ],
+        "stores": [
+            "TimeCardItem",
+            "Employee",
+            "TimeCardEditor"
+        ],
+        "views": [
+            "Login",
+            "PunchClock",
+            "Main",
+            "Manager",
+            "TimeCardEditor",
+            "TimeCardEditorEmployeeList",
+            "TimeCardEditorItemList",
+            "TimeCardEditorItemForm"
+        ],
+        "name": "Timecard",
+        "controllers": [
+            "Login",
+            "PunchClock",
+            "Main",
+            "TimeCardEditor"
+        ]
+    },
+    "id": "ExtBox1-ext-gen1514",
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "loader",
+            "reference": {
+                "name": "loader",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "Loader5",
+                "disableCaching": false,
+                "enabled": true,
+                "paths": [
+                    "{\"Ext\":\".\",",
+                    " \"Common\" : \"/sbma/Common\"}"
+                ]
+            },
+            "designerId": "178909a5-4454-4bb8-a15e-394da205812d"
+        }
+    ]
+}

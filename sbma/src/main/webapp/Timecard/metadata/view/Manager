@@ -1,0 +1,80 @@
+{
+    "type": "tabpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "activeItem": 1,
+        "designer|userClassName": "Manager"
+    },
+    "id": "ExtBox1-ext-gen5077",
+    "designerId": "3df9ec36-3e99-4c30-ac13-8ff24939ddc7",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Employees",
+                "iconCls": "team"
+            },
+            "designerId": "f535fd10-4ab9-40a0-9272-91cbe1d04a74",
+            "masterInstanceId": "ExtBox1-ext-gen18339"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Punch Clock",
+                "iconCls": "time"
+            },
+            "designerId": "bc947b45-c053-47a3-a49d-f9429164734d",
+            "masterInstanceId": "ExtBox1-ext-gen12259"
+        },
+        {
+            "type": "container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "xst": "logout",
+                "title": "Logout",
+                "iconCls": "action",
+                "designer|userClassName": "MyContainer2"
+            },
+            "designerId": "83eb6eb1-d83c-4009-8657-20ec7d58f731",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "xst",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "tabbar",
+            "reference": {
+                "name": "tabBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|pack": "center",
+                "designer|userClassName": "MyTabBar",
+                "docked": "bottom"
+            },
+            "designerId": "95e4544e-84fd-4532-8cf7-501fd4f226bb"
+        }
+    ]
+}

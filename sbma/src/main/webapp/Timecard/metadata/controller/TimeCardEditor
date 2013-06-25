@@ -1,0 +1,288 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "TimeCardEditor"
+    },
+    "id": "ExtBox1-ext-gen24263",
+    "designerId": "596bf57b-b13d-43e8-9345-cb5ef24a74c0",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "editTimeCardItemButton",
+                "ref": "editTimeCardItemButton",
+                "selector": "[xst=editTimeCardItemButton]"
+            },
+            "designerId": "84889e4b-d84b-4bd0-82fe-34a39edb3f73"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "saveTimeCardItemButton",
+                "ref": "saveTimeCardItemButton",
+                "selector": "[xst=saveTimeCardItemButton]"
+            },
+            "designerId": "1cb1c338-d903-469b-bf80-267813f68226"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "Reference12",
+                "ref": "timeCardEditor",
+                "selector": "[xst=timeCardEditor]"
+            },
+            "designerId": "ec6a972c-5360-4b31-8171-405f086d4532"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "timeCardEditorItemList",
+                "ref": "timeCardEditorItemList",
+                "selector": "[xst=timeCardEditorItemList]"
+            },
+            "designerId": "087e136c-7dee-499d-a4c8-719a3cbe1f55"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onTimeCardEditorEmployeeListTap",
+                "fn": "onTimeCardEditorEmployeeListTap",
+                "implHandler": [
+                    "var employeeId = record.get('id');",
+                    "var title = record.get('firstName') + ' ' + record.get('lastName');",
+                    "var store = Ext.getStore('timeCardEditor');",
+                    "store.loadTimeCardItems(this.authenticationToken, employeeId);",
+                    "var timeCardItemEditorList = Ext.create('Timecard.view.TimeCardEditorItemList');",
+                    "timeCardItemEditorList.setTitle(title);",
+                    "this.getTimeCardEditor().push(timeCardItemEditorList);"
+                ],
+                "name": "itemtap",
+                "designer|targetType": "Ext.dataview.List",
+                "designer|controlQuery": "[xst=timeCardEditorEmployeeList]"
+            },
+            "designerId": "b05e51a8-83d3-456f-9f15-5f3a8ad25b5c"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "timeCardEditorItemForm",
+                "ref": "timeCardEditorItemForm",
+                "selector": "[xst=timeCardEditorItemForm]"
+            },
+            "designerId": "fa7189ee-67ba-403f-b999-8ba0327098c6"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "init",
+                "fn": "init",
+                "designer|params": [
+                    "application"
+                ],
+                "implHandler": [
+                    "Timecard.controller.EventBus.addLoginListener(this.onLogin, this);"
+                ]
+            },
+            "designerId": "be2b33fa-608e-433e-ab16-6b0a4e6180ce"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onLogin",
+                "fn": "onLogin",
+                "designer|params": [
+                    "credentialResponseModel"
+                ],
+                "implHandler": [
+                    "this.authenticationToken = credentialResponseModel.get('authenticationToken');"
+                ]
+            },
+            "designerId": "cf10a43c-8954-4843-87c6-93e47587fa51"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onTimeCardEditorItemListActivate",
+                "fn": "onTimeCardEditorItemListActivate",
+                "implHandler": [
+                    "this.getEditTimeCardItemButton().show();"
+                ],
+                "name": "activate",
+                "designer|targetType": "TimeCardEditorItemList",
+                "designer|controlQuery": "[xst=timeCardEditorItemList]"
+            },
+            "designerId": "e9bf344b-b78e-4df0-9178-1d6abea16ecb"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onTimeCardEditorItemListDeactivate",
+                "fn": "onTimeCardEditorItemListDeactivate",
+                "implHandler": [
+                    "this.getEditTimeCardItemButton().hide();"
+                ],
+                "name": "deactivate",
+                "designer|targetType": "TimeCardEditorItemList",
+                "designer|controlQuery": "[xst=timeCardEditorItemList]"
+            },
+            "designerId": "60755660-768f-4f39-a21b-1215d674b8eb"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onEditTimeCardItemButtonTap",
+                "fn": "onEditTimeCardItemButtonTap",
+                "implHandler": [
+                    "var selection = this.getTimeCardEditorItemList().getSelection();",
+                    "if (selection.length == 0) {",
+                    "    Ext.Msg.alert('Edit', 'Please select an item and try again');",
+                    "} else {",
+                    "    var timeCardItemModel = selection[0];",
+                    "    var form = Ext.create('Timecard.view.TimeCardEditorItemForm');",
+                    "    form.setRecord(timeCardItemModel);",
+                    "    var title = this.getTimeCardEditor().getActiveItem().getTitle();",
+                    "    form.setTitle(title);",
+                    "    this.getTimeCardEditor().push(form);",
+                    "}"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "[xst=editTimeCardItemButton]"
+            },
+            "designerId": "b6a1659a-99d0-4e83-84ae-ac05645131c9"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onTimeCardEditorItemFormActivate",
+                "fn": "onTimeCardEditorItemFormActivate",
+                "implHandler": [
+                    "this.getSaveTimeCardItemButton().show();",
+                    ""
+                ],
+                "name": "activate",
+                "designer|targetType": "TimeCardEditorItemForm",
+                "designer|controlQuery": "[xst=timeCardEditorItemForm]"
+            },
+            "designerId": "fa8aa6b1-22c6-407e-b594-0a70796ffa2c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onTimeCardEditorItemFormDeactivate",
+                "fn": "onTimeCardEditorItemFormDeactivate",
+                "implHandler": [
+                    "this.getSaveTimeCardItemButton().hide();"
+                ],
+                "name": "deactivate",
+                "designer|targetType": "TimeCardEditorItemForm",
+                "designer|controlQuery": "[xst=timeCardEditorItemForm]"
+            },
+            "designerId": "e29d3312-1092-4dcf-b679-3a2e0c768aca"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onSaveTimeCardItemButtonTap",
+                "fn": "onSaveTimeCardItemButtonTap",
+                "implHandler": [
+                    "console.log('onSaveTimeCardItemButtonTap');",
+                    "var form = this.getTimeCardEditorItemForm().getForm();",
+                    "if (form.isValid()) {",
+                    "    var values = form.getValues();",
+                    "    Ext.Ajax.request({",
+                    "        method: 'POST',",
+                    "        url: '/sbma/rest/timeCardItem',",
+                    "        timeout: 60000,",
+                    "        jsonData: values,",
+                    "        scope: this,",
+                    "        success: this.onLoginCallback,",
+                    "        failure: function(response, options) {",
+                    "            Ext.Msg.alert(\"Edit\", \"Cannot communicate with server\");",
+                    "        }",
+                    "    });",
+                    "}"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "[xst=saveTimeCardItemButton]"
+            },
+            "designerId": "302e6873-e856-44ba-8e5d-8dabb4460add"
+        }
+    ]
+}

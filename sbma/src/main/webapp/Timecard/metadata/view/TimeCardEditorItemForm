@@ -1,0 +1,173 @@
+{
+    "type": "formpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "xst": "timeCardEditorItemForm",
+        "title": "Employee Name",
+        "designer|userClassName": "TimeCardEditorItemForm"
+    },
+    "id": "ExtBox1-ext-gen9319",
+    "designerId": "32f6ce96-ddc4-4ef7-89b8-61c93cd4698e",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "xst",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "title",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "fieldset",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyFieldSet1",
+                "title": "Time Card Item"
+            },
+            "designerId": "36894a29-ce44-45d0-a343-aa8d43cb7677",
+            "cn": [
+                {
+                    "type": "datepickerfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyDateField",
+                        "label": "Clock In",
+                        "name": "beginDate",
+                        "placeHolder": "mm/dd/yyyy"
+                    },
+                    "designerId": "73b0f92d-ceb5-4348-81df-612677c3f239",
+                    "cn": [
+                        {
+                            "type": "datepicker",
+                            "reference": {
+                                "name": "picker",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyDatePicker"
+                            },
+                            "designerId": "43e2bdae-a562-445a-8b1a-e42b94f975e3",
+                            "cn": [
+                                {
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "doneButton",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyButton6",
+                                        "text": "Done"
+                                    },
+                                    "designerId": "ea3694c8-abbd-48ee-95ec-990f22454a66"
+                                },
+                                {
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "cancelButton",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyButton7",
+                                        "text": "Cancel"
+                                    },
+                                    "designerId": "648edee0-7ef5-4154-920b-ba31151459fa"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "datepickerfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyDateField1",
+                        "itemId": null,
+                        "label": "Clock Out",
+                        "name": "endDate",
+                        "placeHolder": "mm/dd/yyyy"
+                    },
+                    "designerId": "f42a82c3-fa1a-41b7-bf05-a5ad6faa266b",
+                    "cn": [
+                        {
+                            "type": "datepicker",
+                            "reference": {
+                                "name": "picker",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyDatePicker1"
+                            },
+                            "designerId": "09525fdf-b284-4aff-8fa1-34fdf9ffce25",
+                            "cn": [
+                                {
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "doneButton",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyButton8",
+                                        "text": "Done"
+                                    },
+                                    "designerId": "e2301d46-55d2-4b07-afde-904cff959044"
+                                },
+                                {
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "cancelButton",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyButton9",
+                                        "text": "Cancel"
+                                    },
+                                    "designerId": "ded24cdb-d43f-46d4-aae9-2ac9d83458ab"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyTextField1",
+                        "label": "Notes",
+                        "name": "notes"
+                    },
+                    "designerId": "3de8e16f-88e0-4e04-a97b-c78f0b76d160"
+                }
+            ]
+        }
+    ]
+}

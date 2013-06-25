@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC
+"-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" 
+"http://java.sun.com/dtd/web-app_2_3.dtd" >
+<web-app>
+  <display-name>SbmaTimecardServer</display-name>
+  <servlet>
+    <servlet-name>DerbyServlet</servlet-name>
+    <servlet-class>com.sencha.ps.sbma.server.derby.DerbyServlet</servlet-class>
+    <init-param>
+      <param-name>derby.system.home</param-name>
+      <param-value>/home/tony/Projects/Workspaces/Sbma/sbma/derby</param-value>
+    </init-param>
+    <init-param>
+      <param-name>derby.drda.host</param-name>
+      <param-value>localhost</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>SbmaTimecardServer</servlet-name>
+    <servlet-class>org.apache.wink.server.internal.servlet.RestServlet</servlet-class>
+    <init-param>
+      <param-name>javax.ws.rs.Application</param-name>
+      <param-value>com.sencha.ps.sbma.server.SbmaTimecardServer</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SbmaTimecardServer</servlet-name>
+    <url-pattern>/rest/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DerbyServlet</servlet-name>
+    <url-pattern>/derby/*</url-pattern>
+  </servlet-mapping>
+</web-app>

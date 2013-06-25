@@ -1,0 +1,141 @@
+{
+    "type": "formpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "xst": "loginView",
+        "designer|userClassName": "Login",
+        "designer|userAlias": "loginView",
+        "id": null
+    },
+    "id": "ExtBox1-ext-gen2826",
+    "designerId": "5b4ec7f0-1916-4435-9266-bf2b344b8a0a",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "xst",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "titlebar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyTitleBar",
+                "docked": "top",
+                "title": "Time Card"
+            },
+            "designerId": "43cb5f3f-8b91-4c56-bbbc-94931d352d89"
+        },
+        {
+            "type": "fieldset",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "xst": "accountInformation",
+                "designer|userClassName": "MyFieldSet",
+                "itemId": null,
+                "instructions": "Enter User Name and Password and press Login to continue",
+                "title": "Account Information"
+            },
+            "designerId": "edc68488-7954-458d-bb19-e45490295690",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "xst",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyTextField",
+                        "itemId": "userName",
+                        "label": "User Name",
+                        "name": "userName"
+                    },
+                    "designerId": "c2007e32-acdd-4fab-a1cc-beb7996f158c"
+                },
+                {
+                    "type": "passwordfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "xst": "loginPassword",
+                        "designer|userClassName": "MyPasswordField",
+                        "itemId": "password",
+                        "label": "Password",
+                        "name": "password"
+                    },
+                    "designerId": "eabdf955-66f3-4b9b-858b-9869a99c0286",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "xst",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|pack": "center",
+                "designer|userClassName": "MyToolbar",
+                "docked": "bottom"
+            },
+            "designerId": "cd24a625-fc99-40db-992d-a61b7b12555d",
+            "cn": [
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "xst": "login",
+                        "designer|userClassName": "MyButton1",
+                        "iconCls": "user",
+                        "iconMask": true,
+                        "text": "Login"
+                    },
+                    "designerId": "ebd14fa4-91d2-46ae-b3ed-27c3b2b1c97b",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "xst",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

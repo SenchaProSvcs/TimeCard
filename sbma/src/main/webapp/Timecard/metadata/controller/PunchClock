@@ -1,0 +1,605 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "authenticationToken": 0,
+        "designer|userClassName": "PunchClock",
+        "requires": [
+            "Timecard.controller.IntervalTimer"
+        ]
+    },
+    "configAlternates": {
+        "authenticationToken": "number"
+    },
+    "id": "ExtBox1-ext-gen18252",
+    "designerId": "5483d1ff-c643-4f26-9de3-07666088f5e1",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "authenticationToken",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "clock",
+                "ref": "clock",
+                "selector": "[xst=clock]"
+            },
+            "designerId": "a7e021b3-bfe7-4236-b4d9-80201f971c81"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onContainerInitialize",
+                "fn": "onContainerInitialize",
+                "implHandler": [
+                    "console.log(\"onPunchClockViewInitialize: entered\");",
+                    "",
+                    "this.displayTime();",
+                    "this.intervalTimer.start();",
+                    ""
+                ],
+                "name": "initialize",
+                "designer|targetType": "Ext.Container",
+                "designer|controlQuery": "[xst=punchClockView]"
+            },
+            "designerId": "e9980dc2-ce82-4f34-a500-0552ef081ca9"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onContainerRemove",
+                "fn": "onContainerRemove",
+                "implHandler": [
+                    "this.intervalTimer.stop();"
+                ],
+                "name": "remove",
+                "designer|targetType": "Ext.Container",
+                "designer|controlQuery": "[xst=punchClockView]"
+            },
+            "designerId": "c841516c-287c-4c49-b44e-3cf0d2fb7038"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "timeCardItemList",
+                "ref": "timeCardItemList",
+                "selector": "[xst=timeCardItemList]"
+            },
+            "designerId": "d0e5586d-456b-4221-9fb7-2d9d3171f9e1"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "clockInButton",
+                "ref": "clockInButton",
+                "selector": "[xst=clockIn]"
+            },
+            "designerId": "00aff8d0-9e87-41a0-9362-8f5a2e23be17"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "clockOutButton",
+                "ref": "clockOutButton",
+                "selector": "[xst=clockOut]"
+            },
+            "designerId": "2501d603-a788-452e-9bf5-4eeccc4e09b1"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "init",
+                "fn": "init",
+                "designer|params": [
+                    "application"
+                ],
+                "implHandler": [
+                    "this.intervalTimer = Ext.create('Timecard.controller.IntervalTimer', {",
+                    "    interval: 1000,",
+                    "    fn: this.displayTime,",
+                    "    fnScope: this",
+                    "});",
+                    "",
+                    "Timecard.controller.EventBus.addLoginListener(this.onLogin, this);",
+                    ""
+                ]
+            },
+            "designerId": "f4bf40ef-60d6-4848-a06a-1800de0aa8fa"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "configureView",
+                "fn": "configureView",
+                "designer|params": [
+                    "store"
+                ],
+                "implHandler": [
+                    "var firstInProgressItem = this.findFirstInProgressItem(store);",
+                    "if (firstInProgressItem) {",
+                    "    this.selectAndScroll(this.getTimeCardItemList(), firstInProgressItem);",
+                    "    this.getClockInButton().disable();",
+                    "    this.getClockOutButton().enable();",
+                    "} else {",
+                    "    var lastCompletedItem = this.findLastCompletedItem(store);",
+                    "    if (lastCompletedItem) {",
+                    "        this.selectAndScroll(this.getTimeCardItemList(), lastCompletedItem);",
+                    "    }",
+                    "    this.getClockInButton().enable();",
+                    "    this.getClockOutButton().disable();",
+                    "}"
+                ]
+            },
+            "designerId": "fb40fb42-25f8-4a7d-99ef-7b7928e84691"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "findFirstInProgressItem",
+                "fn": "findFirstInProgressItem",
+                "designer|params": [
+                    "store"
+                ],
+                "implHandler": [
+                    "var firstInProgressItem = null;",
+                    "",
+                    "store.each(function (record) {",
+                    "    if (record.get('type') == Timecard.model.Constants.IN_PROGRESS) {",
+                    "        firstInProgressItem = record;",
+                    "        return false;",
+                    "    }",
+                    "    return true;",
+                    "}, this);",
+                    "",
+                    "return firstInProgressItem;"
+                ]
+            },
+            "designerId": "958f59f7-f199-45a1-8069-2104ff8ae8b2"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "findLastCompletedItem",
+                "fn": "findLastCompletedItem",
+                "designer|params": [
+                    "store"
+                ],
+                "implHandler": [
+                    "var lastCompletedItem = null;",
+                    "",
+                    "store.each(function (record) {",
+                    "    if (record.get('type') == Timecard.model.Constants.COMPLETED) {",
+                    "        lastCompletedItem = record;",
+                    "    }",
+                    "    return true;",
+                    "}, this);",
+                    "",
+                    "return lastCompletedItem;"
+                ]
+            },
+            "designerId": "342f3cb0-b33d-42bd-9a18-52b3c2840694"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "displayTime",
+                "fn": "displayTime",
+                "implHandler": [
+                    "var date = new Date();",
+                    "var formattedTime = Ext.Date.format(date, 'H:i:s');",
+                    "var formattedDate = Ext.Date.format(date, 'm/d/Y');",
+                    "var formattedClock = formattedTime + ' on ' + formattedDate;",
+                    "this.getClock().setTitle(formattedClock);"
+                ]
+            },
+            "designerId": "a9b07057-296c-407a-be02-ac08307bbaad"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onClockInTap",
+                "fn": "onClockInTap",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "if (navigator && navigator.geolocation) {",
+                    "    navigator.geolocation.getCurrentPosition(function(position) {",
+                    "        me.clockIn(position);",
+                    "    }, function(error) {",
+                    "        Ext.Msg.alert('Cannot Clock In', 'Geolocation not enabled');",
+                    "    });",
+                    "} else {",
+                    "    Ext.Msg.alert('Cannot Clock In', 'Geolocation not supported');",
+                    "}"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "[xst=clockIn]"
+            },
+            "designerId": "ff667ecd-a97a-4ca6-9acf-eeb424d6c9fe"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "clockIn",
+                "fn": "clockIn",
+                "designer|params": [
+                    "position"
+                ],
+                "implHandler": [
+                    "var url = '/sbma/rest/timeCardItem?&at=' + this.getAuthenticationToken();",
+                    "",
+                    "var date = Ext.util.Format.date(new Date(), 'c');",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    method: 'POST',",
+                    "    url: url,",
+                    "    timeout: 60000,",
+                    "    jsonData: {",
+                    "        id: -1,",
+                    "        type: Timecard.model.Constants.IN_PROGRESS,",
+                    "        beginDate: date,",
+                    "        endDate: null,",
+                    "        latitude: position.coords.latitude,",
+                    "        longitude: position.coords.longitude",
+                    "    },",
+                    "    scope: this,",
+                    "    success: this.onClockInCallback,",
+                    "    failure: function() {",
+                    "        Ext.Msg.alert(\"Clock In\", \"Cannot communicate with server\");",
+                    "    }",
+                    "});",
+                    ""
+                ]
+            },
+            "designerId": "2788ced8-9141-4057-82c6-a3b4419ca15a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "validateClockOutRequest",
+                "fn": "validateClockOutRequest",
+                "designer|params": [
+                    "position"
+                ],
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "var store = Ext.data.StoreManager.lookup('timeCardItem');",
+                    "",
+                    "var item = this.findFirstInProgressItem(store);",
+                    "",
+                    "if (item) {",
+                    "",
+                    "    var from = new google.maps.LatLng(item.get('latitude'), item.get('longitude'));",
+                    "    var to = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);",
+                    "    dist = google.maps.geometry.spherical.computeDistanceBetween(from, to, Timecard.model.Constants.RADIUS);",
+                    "",
+                    "    if (dist >= Timecard.model.Constants.CLOCK_OUT_LIMIT) {",
+                    "        Ext.Msg.prompt('Explanation Required', 'Clock out location exceeds allowed distance from clock in.', function(button, text) {",
+                    "            me.clockOut(item, text);",
+                    "        });",
+                    "    } else {",
+                    "        me.clockOut(item);",
+                    "    }",
+                    "}",
+                    ""
+                ]
+            },
+            "designerId": "cae271a7-4666-4e12-b152-8f59ddf7f7ec"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "clockOut",
+                "fn": "clockOut",
+                "designer|params": [
+                    "item",
+                    "notes"
+                ],
+                "implHandler": [
+                    "// With the SBMA Timecard application, the clock in time, clock out time and",
+                    "// geolocation are reported by the client. The employee gets paid based on hours",
+                    "// worked, and the clock out location must be within a configurable distance from",
+                    "// the clock in location to ensure the employee didn't go home early and clock out.",
+                    "// This client reporting of financially valuable information would not be allowed",
+                    "// in some industries (e.g. banking) because of the ease with which it could be",
+                    "// spoofed. We're assuming this is not an issue for our Timecard example. ",
+                    "",
+                    "var url = '/sbma/rest/timeCardItem?&at=' + this.getAuthenticationToken();",
+                    "",
+                    "var beginDate = Ext.util.Format.date(item.get('beginDate'), 'c');",
+                    "var endDate = Ext.util.Format.date(new Date(), 'c');",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    method: 'POST',",
+                    "    url: url,",
+                    "    timeout: 60000,",
+                    "    jsonData: {",
+                    "        id: item.get('id'),",
+                    "        type: Timecard.model.Constants.COMPLETED,",
+                    "        beginDate: beginDate,",
+                    "        endDate: endDate,",
+                    "        notes: notes",
+                    "    },",
+                    "    scope: this,",
+                    "    success: this.onClockOutCallback,",
+                    "    failure: function() {",
+                    "        Ext.Msg.alert(\"Clock In\", \"Cannot communicate with server\");",
+                    "    }",
+                    "});",
+                    ""
+                ]
+            },
+            "designerId": "64d48cc2-4cc4-4890-82c8-ffa415183739"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onClockInCallback",
+                "fn": "onClockInCallback",
+                "designer|params": [
+                    "response"
+                ],
+                "implHandler": [
+                    "var timeCardItemDto = Ext.decode(response.responseText);",
+                    "var timeCardItemModel = Ext.create('Timecard.model.TimeCardItem', timeCardItemDto);",
+                    "var store = Ext.data.StoreManager.lookup('timeCardItem');",
+                    "store.add(timeCardItemModel);",
+                    "this.configureView(store);"
+                ]
+            },
+            "designerId": "0057cf01-382b-4968-9ad5-c01e058e66fa"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onClockOutTap",
+                "fn": "onClockOutTap",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "if (navigator && navigator.geolocation) {",
+                    "    navigator.geolocation.getCurrentPosition(function(position) {",
+                    "        me.validateClockOutRequest(position);",
+                    "    }, function(error) {",
+                    "        Ext.Msg.alert('Cannot Clock Out', 'Geolocation not enabled');",
+                    "    });",
+                    "} else {",
+                    "    Ext.Msg.alert('Cannot Clock Out', 'Geolocation not supported');",
+                    "}"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "[xst=clockOut]"
+            },
+            "designerId": "937a8633-db1d-4699-a09a-3d1dc3cfd06f"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onClockOutCallback",
+                "fn": "onClockOutCallback",
+                "designer|params": [
+                    "response"
+                ],
+                "implHandler": [
+                    "var timeCardItemDto = Ext.decode(response.responseText);",
+                    "var store = Ext.data.StoreManager.lookup('timeCardItem');",
+                    "var index = store.find('id', timeCardItemDto.id);",
+                    "var model = store.getAt(index);",
+                    "// It appears that setData does not result in List updating its display",
+                    "//model.setData(timeCardItemDto);",
+                    "model.set('type', timeCardItemDto.type);",
+                    "model.set('endDate', timeCardItemDto.endDate);",
+                    "this.configureView(store);"
+                ]
+            },
+            "designerId": "7217e1b6-458e-4a4d-a174-86037987ab82"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onLogin",
+                "fn": "onLogin",
+                "designer|params": [
+                    "credentialResponseModel"
+                ],
+                "implHandler": [
+                    "this.setAuthenticationToken(credentialResponseModel.get('authenticationToken'));"
+                ]
+            },
+            "designerId": "ab1e947f-6083-4738-9b90-b606a9b3f754"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onLogoutTap",
+                "fn": "onLogoutTap",
+                "implHandler": [
+                    "Timecard.controller.EventBus.fireLogoutEvent();"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "[xst=logout]"
+            },
+            "designerId": "995c5fad-d5d9-4d20-a154-36a725bf04e8"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "selectAndScroll",
+                "fn": "selectAndScroll",
+                "designer|params": [
+                    "list, record"
+                ],
+                "implHandler": [
+                    "list.select(record);",
+                    "var store = list.getStore();",
+                    "var index = store.indexOf(record);",
+                    "var items = list.container.getViewItems();",
+                    "var element = items[index];",
+                    "var offset = Ext.get(element).dom.offsetTop;",
+                    "// TODO: Need to be smart about how we scroll so that some context is visible",
+                    "list.getScrollable().getScroller().scrollTo(0, offset);",
+                    ""
+                ]
+            },
+            "designerId": "99f50b00-cca9-4b9a-a382-9094c0e3b9bd"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onPunchClockViewActivate",
+                "fn": "onPunchClockViewActivate",
+                "implHandler": [
+                    "console.log(\"onPunchClockViewActivate: entered\");",
+                    "var store = Ext.getStore(\"timeCardItem\");",
+                    "var authenticationToken = this.getAuthenticationToken();",
+                    "store.loadTimeCardItems(authenticationToken);"
+                ],
+                "name": "activate",
+                "designer|targetType": "PunchClock",
+                "designer|controlQuery": "[xst=punchClockView]"
+            },
+            "designerId": "a248bb00-6364-4f40-a188-1d671dbab710"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onContainerLoadcomplete",
+                "fn": "onContainerLoadcomplete",
+                "implHandler": [
+                    "this.configureView(store);"
+                ],
+                "name": "loadcomplete",
+                "designer|targetType": "PunchClock",
+                "designer|controlQuery": "[xst=punchClockView]"
+            },
+            "designerId": "fe0b0cb2-e8b9-4f4d-80b8-fd2ced22566e"
+        }
+    ]
+}

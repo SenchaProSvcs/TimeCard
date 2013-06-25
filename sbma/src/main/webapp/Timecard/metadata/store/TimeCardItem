@@ -1,0 +1,79 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "TimeCardItem",
+        "autoSync": null,
+        "model": "TimeCardItem",
+        "storeId": "timeCardItem"
+    },
+    "id": "ExtBox1-ext-gen20293",
+    "designerId": "4cc058e5-f604-4379-b341-2f6984d2ec01",
+    "cn": [
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy",
+                "url": null
+            },
+            "designerId": "9c10c8d5-8e4a-49ad-8cf6-f7569e4964c2",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader"
+                    },
+                    "designerId": "19bd24dd-96e1-497e-b97a-13a8c71e1ffa"
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "loadTimeCardItems",
+                "fn": "loadTimeCardItems",
+                "designer|params": [
+                    "authenticationToken"
+                ],
+                "implHandler": [
+                    "var url = '/sbma/rest/timeCardItem?&at=' + authenticationToken;",
+                    "this.getProxy().setUrl(url);",
+                    "this.load();"
+                ]
+            },
+            "designerId": "116bad3c-a798-4f8d-ae48-ce60fa18931e"
+        },
+        {
+            "type": "sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MySorter",
+                "property": "beginDate"
+            },
+            "designerId": "0881c41f-c66f-49f9-814e-d3c9a9b7384a"
+        }
+    ]
+}

@@ -1,0 +1,154 @@
+{
+    "type": "list",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "xst": "timeCardEditorItemList",
+        "title": "Employee Name",
+        "designer|userClassName": "TimeCardEditorItemList",
+        "designer|userAlias": "timeCardEditorItemList",
+        "store": "timeCardEditor"
+    },
+    "id": "ExtBox1-ext-gen4001",
+    "designerId": "b019a837-e5d1-419b-8034-913a513a10b3",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "xst",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "title",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "template",
+            "reference": {
+                "name": "itemTpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "itemTpl",
+                "implHandler": [
+                    "<div style='display:table; width:100%;'>",
+                    "    <div style='display:table-row;'>",
+                    "        <div style='display:table-cell; width:25%; vertical-align: middle;'><b>{beginDate:this.day}</b><br/>{beginDate:date('M j')}</div>",
+                    "        <div style='display:table-cell; width:25%; vertical-align: middle;'>{beginDate:this.time}</div>",
+                    "        <div style='display:table-cell; width:25%; vertical-align: middle;'>{[this.getEndTime(values)]}</div>",
+                    "        <div style='display:table-cell; width:25%; vertical-align: middle;'>{[this.getDuration(values)]}</div>",
+                    "    </div>",
+                    "    <div style='display:table-row;'>",
+                    "        <div style='display:table-cell; colspan:4; vertical-align: middle;'>{notes}</div>",
+                    "    </div>",
+                    "</div>"
+                ],
+                "designer|displayName": "itemTpl"
+            },
+            "designerId": "1717d50d-51e6-4167-92a0-b76de95cca04",
+            "cn": [
+                {
+                    "type": "templatefunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "day",
+                        "fn": "day",
+                        "designer|params": [
+                            "date"
+                        ],
+                        "implHandler": [
+                            "return Ext.util.Format.date(date, 'D').toUpperCase();"
+                        ]
+                    },
+                    "designerId": "ef35b635-cfff-4c25-8787-bedc7d466a0b"
+                },
+                {
+                    "type": "templatefunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "time",
+                        "fn": "time",
+                        "designer|params": [
+                            "date"
+                        ],
+                        "implHandler": [
+                            "return Ext.util.Format.date(date, 'h:i a');"
+                        ]
+                    },
+                    "designerId": "ada82588-cd77-4896-9892-cea940bd808e"
+                },
+                {
+                    "type": "templatefunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "getEndTime",
+                        "fn": "getEndTime",
+                        "designer|params": [
+                            "timeCardItem"
+                        ],
+                        "implHandler": [
+                            "var beginDate = timeCardItem.beginDate;",
+                            "var endDate = timeCardItem.endDate;",
+                            "var endTime = Ext.util.Format.date(endDate, 'h:i a');",
+                            "if (beginDate && endDate) {",
+                            "    var elapsedMillis = endDate.getTime() - beginDate.getTime();",
+                            "    var elapsedDays = Math.floor(elapsedMillis / (24 * 60 * 60 * 1000));",
+                            "    if (elapsedDays > 0) {",
+                            "        endTime = endTime + \" + \" + elapsedDays;",
+                            "    }",
+                            "}",
+                            "return endTime;"
+                        ]
+                    },
+                    "designerId": "0812663f-c420-4ead-ad41-8f83c54d8404"
+                },
+                {
+                    "type": "templatefunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "getDuration",
+                        "fn": "getDuration",
+                        "designer|params": [
+                            "timeCardItem"
+                        ],
+                        "implHandler": [
+                            "var beginDate = timeCardItem.beginDate;",
+                            "var endDate = timeCardItem.endDate;",
+                            "var endTime = Ext.util.Format.date(endDate, 'h:i a');",
+                            "var duration;",
+                            "if (beginDate && endDate) {",
+                            "    var elapsedMillis = endDate.getTime() - beginDate.getTime();",
+                            "    var elapsedHours = Math.floor(elapsedMillis / (60 * 60 * 1000));",
+                            "    duration = elapsedHours + \" hrs\";",
+                            "}",
+                            "return duration;"
+                        ]
+                    },
+                    "designerId": "4ec2bffc-1ec0-4062-93fa-ad14dfe7e6e0"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,114 @@
+{
+    "type": "datamodel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "TimeCardItem",
+        "idProperty": null
+    },
+    "id": "ExtBox1-ext-gen20920",
+    "designerId": "87dec0ef-d9e0-4f96-b684-b553bd594887",
+    "cn": [
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field2",
+                "name": "id",
+                "type": "auto"
+            },
+            "designerId": "23c1dbdb-cc40-470d-be61-a6f7be9ad26e"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field3",
+                "name": "type",
+                "type": "int"
+            },
+            "designerId": "3ececdd3-8933-475c-b5a4-2b6a0fe72616"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field4",
+                "name": "beginDate",
+                "type": "date"
+            },
+            "designerId": "0aa5191d-d52c-4cc6-bd26-e0cad011f6ab"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field5",
+                "name": "endDate",
+                "type": "date"
+            },
+            "designerId": "47a1a511-fc13-4136-9851-49c0bd0fd503"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field7",
+                "name": "latitude",
+                "type": "float"
+            },
+            "designerId": "fb573805-7684-4222-b3f6-42f1590ab890"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field8",
+                "name": "longitude",
+                "type": "float"
+            },
+            "designerId": "417f719f-566c-4442-be03-2986f008da4e"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field14",
+                "name": "notes",
+                "type": "string"
+            },
+            "designerId": "23d2d6b3-7545-4271-a8a6-92bbd10df624"
+        }
+    ]
+}

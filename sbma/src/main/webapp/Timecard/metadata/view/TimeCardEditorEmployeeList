@@ -1,0 +1,41 @@
+{
+    "type": "list",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "xst": "timeCardEditorEmployeeList",
+        "designer|userClassName": "TimeCardEditorEmployeeList",
+        "designer|userAlias": "timeCardEditorEmployeeList",
+        "store": "employee"
+    },
+    "id": "ExtBox1-ext-gen21814",
+    "designerId": "bd319ae8-ad11-41e3-b792-cfd311677c2e",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "xst",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "template",
+            "reference": {
+                "name": "itemTpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "itemTpl",
+                "implHandler": [
+                    "<div>{firstName} {lastName}</div>"
+                ],
+                "designer|displayName": "itemTpl"
+            },
+            "designerId": "8c5fd922-d1d6-4da0-9c17-edd5191cd692"
+        }
+    ]
+}

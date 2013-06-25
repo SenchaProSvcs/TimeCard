@@ -1,0 +1,92 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Main"
+    },
+    "id": "ExtBox1-ext-gen13911",
+    "designerId": "dd935313-895a-40f0-bc06-88fa1f2272e6",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "mainView",
+                "ref": "mainView",
+                "selector": "[xst=mainView]"
+            },
+            "designerId": "ed7905ae-09fe-4a71-af16-0b0259d2354e"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "init",
+                "fn": "init",
+                "designer|params": [
+                    "application"
+                ],
+                "implHandler": [
+                    "Timecard.controller.EventBus.addLoginListener(this.onLogin, this);",
+                    "Timecard.controller.EventBus.addLogoutListener(this.onLogout, this);"
+                ]
+            },
+            "designerId": "841d23d3-0f33-4400-9721-7a6bcf6d0def"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onLogin",
+                "fn": "onLogin",
+                "designer|params": [
+                    "credentialResponseModel"
+                ],
+                "implHandler": [
+                    "var mainView = this.getMainView();",
+                    "mainView.removeAll();",
+                    "if (credentialResponseModel.get(\"isManager\")) {",
+                    "    mainView.add(Ext.create('Timecard.view.Manager'));",
+                    "} else {",
+                    "    mainView.add(Ext.create('Timecard.view.NonManager'));",
+                    "}"
+                ]
+            },
+            "designerId": "6e635cdb-27d7-4613-8a58-c8f4fae2981b"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onLogout",
+                "fn": "onLogout",
+                "implHandler": [
+                    "var loginView = Ext.create('Timecard.view.Login');",
+                    "this.getMainView().removeAll();",
+                    "this.getMainView().add(loginView);"
+                ]
+            },
+            "designerId": "a625d93c-fcf2-4219-aeab-1aa255a0d2d3"
+        }
+    ]
+}

@@ -1,0 +1,105 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Employee",
+        "model": "Employee",
+        "storeId": "employee"
+    },
+    "id": "ExtBox1-ext-gen15107",
+    "designerId": "9b85f6bf-d83a-4ad5-ba3d-7bf982d5486b",
+    "cn": [
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy1"
+            },
+            "designerId": "f6909500-03c5-4dde-b2a5-e718d08051c5",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader1"
+                    },
+                    "designerId": "224a9dbe-26f3-4673-bce0-a7ad4d5224d7"
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "constructor",
+                "fn": "constructor",
+                "designer|params": [
+                    "config"
+                ],
+                "implHandler": [
+                    "this.callParent(arguments);",
+                    "Timecard.controller.EventBus.addLoginListener(this.onLogin, this);"
+                ]
+            },
+            "designerId": "b2782558-aac8-41dd-93d2-d6aeb4de2a1f"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onLogin",
+                "fn": "onLogin",
+                "designer|params": [
+                    "credentialResponseModel"
+                ],
+                "implHandler": [
+                    "if (credentialResponseModel.get(\"isManager\")) {",
+                    "    this.loadEmployees(credentialResponseModel.get('authenticationToken'));",
+                    "}"
+                ]
+            },
+            "designerId": "07c8c75d-3183-4360-88de-6d48faf7b016"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "loadEmployees",
+                "fn": "loadEmployees",
+                "designer|params": [
+                    "authenticationToken"
+                ],
+                "implHandler": [
+                    "var url = '/sbma/rest/employee?&at=' + authenticationToken;",
+                    "this.getProxy().setUrl(url);",
+                    "this.load();"
+                ]
+            },
+            "designerId": "a3825f08-9bf3-4ee5-b2d5-73b930e9deb1"
+        }
+    ]
+}

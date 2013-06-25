@@ -1,0 +1,43 @@
+{
+    "type": "datamodel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Constants",
+        "singleton": true
+    },
+    "id": "ExtBox1-ext-gen10635",
+    "designerId": "1c19b8f7-6f92-45ae-a062-92dcda6ad512",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "constructor",
+                "fn": "constructor",
+                "designer|params": [
+                    "config"
+                ],
+                "implHandler": [
+                    "this.callParent(arguments);",
+                    "",
+                    "this.SCHEDULED=1;",
+                    "this.IN_PROGRESS=2;",
+                    "this.COMPLETED=3;",
+                    "this.PTO=4;",
+                    "this.RADIUS=3963.19; // earth's radius (in same unites as CLOCK_OUT_LIMIT, e.g. miles)",
+                    "this.CLOCK_OUT_LIMIT=0 // in same units as RADIUS",
+                    ""
+                ]
+            },
+            "designerId": "b5a6b7a3-8dd1-4a78-aaf4-9360312e3f76"
+        }
+    ]
+}

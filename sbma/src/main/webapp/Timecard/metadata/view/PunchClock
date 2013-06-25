@@ -1,0 +1,249 @@
+{
+    "type": "container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "xst": "punchClockView",
+        "designer|userClassName": "PunchClock",
+        "designer|userAlias": "punchclock",
+        "cls": [
+            "punch-clock-container"
+        ],
+        "layout": "vbox"
+    },
+    "id": "ExtBox1-ext-gen12259",
+    "designerId": "dcd23940-405c-4690-b26b-9880efec4210",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "xst",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "titlebar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "xst": "clock",
+                "designer|userClassName": "MyTitleBar1",
+                "docked": "top",
+                "title": "Punch Clock"
+            },
+            "designerId": "df14ab54-57ac-46a6-bf6f-2022319d8720",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "xst",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "xst": "clockIn",
+                        "designer|userClassName": "MyButton4",
+                        "ui": "confirm",
+                        "text": "Clock In"
+                    },
+                    "designerId": "f1cb212e-01dc-46c2-89e7-3332b52472f8",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "xst",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "xst": "clockOut",
+                        "align": "right",
+                        "designer|userClassName": "MyButton5",
+                        "ui": "decline",
+                        "text": "Clock Out"
+                    },
+                    "designerId": "52749b3b-6903-4fe5-84ea-1c72a061eaf3",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "xst",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "list",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "xst": "timeCardItemList",
+                "layout|flex": 1,
+                "designer|userClassName": "MyList",
+                "store": "timeCardItem"
+            },
+            "designerId": "039404f5-db8b-48b5-98aa-715ff50046b0",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "xst",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "template",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "itemTpl",
+                        "implHandler": [
+                            "<div style='display:table; width:100%;'>",
+                            "    <div style='display:table-row;'>",
+                            "        <div style='display:table-cell; width:33%; vertical-align: middle;'><b>{beginDate:this.day}</b><br/>{beginDate:date('M j')}</div>",
+                            "        <div style='display:table-cell; width:33%; vertical-align: middle;'>{beginDate:this.time}</div>",
+                            "        <div style='display:table-cell; width:33%; vertical-align: middle;'>{[this.getEndTime(values)]}</div>",
+                            "    </div>",
+                            "</div>"
+                        ],
+                        "designer|displayName": "itemTpl"
+                    },
+                    "designerId": "2c1e1401-cf4d-47c2-a3c5-b569253fc009",
+                    "cn": [
+                        {
+                            "type": "templatefunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "day",
+                                "fn": "day",
+                                "designer|params": [
+                                    "date"
+                                ],
+                                "implHandler": [
+                                    "return Ext.util.Format.date(date, 'D').toUpperCase();"
+                                ]
+                            },
+                            "designerId": "b89bea17-1557-46c5-ba7b-e46c5519c776"
+                        },
+                        {
+                            "type": "templatefunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "time",
+                                "fn": "time",
+                                "designer|params": [
+                                    "date"
+                                ],
+                                "implHandler": [
+                                    "var time = Ext.util.Format.date(date, 'h:i a');",
+                                    "return time;"
+                                ]
+                            },
+                            "designerId": "90aba197-b487-47aa-af9d-fec4dd306ff1"
+                        },
+                        {
+                            "type": "templatefunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "getEndTime",
+                                "fn": "getEndTime",
+                                "designer|params": [
+                                    "timeCardItem"
+                                ],
+                                "implHandler": [
+                                    "var beginDate = timeCardItem.beginDate;",
+                                    "var endDate = timeCardItem.endDate;",
+                                    "var endTime = Ext.util.Format.date(endDate, 'h:i a');",
+                                    "if (beginDate && endDate) {",
+                                    "    var elapsedMillis = endDate.getTime() - beginDate.getTime();",
+                                    "    var elapsedDays = Math.floor(elapsedMillis / (24 * 60 * 60 * 1000));",
+                                    "    if (elapsedDays > 0) {",
+                                    "        endTime = endTime + \" + \" + elapsedDays;",
+                                    "    }",
+                                    "}",
+                                    "return endTime;"
+                                ]
+                            },
+                            "designerId": "9cbc02c4-7a4b-4160-84ea-e15f87a4a03a"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "customevent",
+            "reference": {
+                "name": "customEvents",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "CustomEvent",
+                "name": "loadcomplete",
+                "params": [
+                    "store"
+                ]
+            },
+            "designerId": "c20337b2-e240-4e21-b1c7-721565b5d4a9"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "initialize",
+                "fn": "initialize",
+                "implHandler": [
+                    "var me = this;",
+                    "var store = Ext.getStore('timeCardItem');",
+                    "store.addAfterListener('load', function(store) {",
+                    "    me.fireEvent('loadcomplete', store);",
+                    "});"
+                ]
+            },
+            "designerId": "19b0c2e9-220d-422a-93fb-2d7985e30f47"
+        }
+    ]
+}

@@ -1,0 +1,97 @@
+{
+    "type": "navigationview",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "xst": "timeCardEditor",
+        "designer|userClassName": "TimeCardEditor",
+        "designer|userAlias": "timeCardEditor"
+    },
+    "id": "ExtBox1-ext-gen18339",
+    "designerId": "37dcde47-044a-4501-941e-1ab8dffc27c1",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "xst",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "navigationbar",
+            "reference": {
+                "name": "navigationBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyNavigationBar"
+            },
+            "designerId": "26881ff5-c285-443e-841d-7579de6e5c93",
+            "cn": [
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "xst": "editTimeCardItemButton",
+                        "align": "right",
+                        "designer|userClassName": "MyButton4",
+                        "hidden": true,
+                        "text": "Edit"
+                    },
+                    "designerId": "fb425269-5ed8-4f94-9746-b86e037ed03f",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "xst",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "xst": "saveTimeCardItemButton",
+                        "align": "right",
+                        "designer|userClassName": "MyButton5",
+                        "hidden": true,
+                        "text": "Save"
+                    },
+                    "designerId": "f73afff8-4a94-48d8-ad72-739e19bfb0c6",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "xst",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Employees"
+            },
+            "designerId": "43918d12-189c-47b7-b8a1-11a54c494ab0",
+            "masterInstanceId": "ExtBox1-ext-gen21814"
+        }
+    ]
+}

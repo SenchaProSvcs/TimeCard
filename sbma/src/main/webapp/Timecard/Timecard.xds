@@ -1,0 +1,262 @@
+{
+    "name": "Timecard",
+    "settings": {
+        "urlPrefix": "",
+        "spacesToIndent": 4,
+        "exportPath": "",
+        "sdkPath": "",
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false
+    },
+    "xdsVersion": "2.1.0",
+    "xdsBuild": 676,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000498,
+    "framework": "touch20",
+    "topInstanceFileMap": {
+        "0f347aee-169d-4cde-9995-1de1397b74c4": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "5b4ec7f0-1916-4435-9266-bf2b344b8a0a": {
+            "paths": [
+                "metadata/view/Login",
+                "app/view/override/Login.js",
+                "app/view/Login.js"
+            ],
+            "className": "Login"
+        },
+        "d3606eb7-4150-42e5-b28f-718ce4573399": {
+            "paths": [
+                "metadata/controller/Login",
+                "app/controller/override/Login.js",
+                "app/controller/Login.js"
+            ],
+            "className": "Login"
+        },
+        "f84bfcdd-4a1b-473f-af82-1d34df10b80f": {
+            "paths": [
+                "metadata/model/CredentialRequest",
+                "app/model/override/CredentialRequest.js",
+                "app/model/CredentialRequest.js"
+            ],
+            "className": "CredentialRequest"
+        },
+        "dcd23940-405c-4690-b26b-9880efec4210": {
+            "paths": [
+                "metadata/view/PunchClock",
+                "app/view/override/PunchClock.js",
+                "app/view/PunchClock.js"
+            ],
+            "className": "PunchClock"
+        },
+        "5483d1ff-c643-4f26-9de3-07666088f5e1": {
+            "paths": [
+                "metadata/controller/PunchClock",
+                "app/controller/override/PunchClock.js",
+                "app/controller/PunchClock.js"
+            ],
+            "className": "PunchClock"
+        },
+        "71447af2-ec15-4754-967e-e430e6fd7fa9": {
+            "paths": [
+                "metadata/controller/IntervalTimer",
+                "app/controller/override/IntervalTimer.js",
+                "app/controller/IntervalTimer.js"
+            ],
+            "className": "IntervalTimer"
+        },
+        "b3352431-6003-41b5-8970-cbf0919d1a4e": {
+            "paths": [
+                "metadata/view/Main",
+                "app/view/override/Main.js",
+                "app/view/Main.js"
+            ],
+            "className": "Main"
+        },
+        "4cc058e5-f604-4379-b341-2f6984d2ec01": {
+            "paths": [
+                "metadata/store/TimeCardItem",
+                "app/store/override/TimeCardItem.js",
+                "app/store/TimeCardItem.js"
+            ],
+            "className": "TimeCardItem"
+        },
+        "87dec0ef-d9e0-4f96-b684-b553bd594887": {
+            "paths": [
+                "metadata/model/TimeCardItem",
+                "app/model/override/TimeCardItem.js",
+                "app/model/TimeCardItem.js"
+            ],
+            "className": "TimeCardItem"
+        },
+        "92b03a76-5cdb-401d-b073-0a6dee9ec35e": {
+            "paths": [
+                "metadata/controller/EventBus",
+                "app/controller/override/EventBus.js",
+                "app/controller/EventBus.js"
+            ],
+            "className": "EventBus"
+        },
+        "4fbb20c8-d319-447e-a1e7-4ef0a8f0ca1c": {
+            "paths": [
+                "metadata/model/CredentialResponse",
+                "app/model/override/CredentialResponse.js",
+                "app/model/CredentialResponse.js"
+            ],
+            "className": "CredentialResponse"
+        },
+        "1c19b8f7-6f92-45ae-a062-92dcda6ad512": {
+            "paths": [
+                "metadata/model/Constants",
+                "app/model/override/Constants.js",
+                "app/model/Constants.js"
+            ],
+            "className": "Constants"
+        },
+        "dd935313-895a-40f0-bc06-88fa1f2272e6": {
+            "paths": [
+                "metadata/controller/Main",
+                "app/controller/override/Main.js",
+                "app/controller/Main.js"
+            ],
+            "className": "Main"
+        },
+        "d22fd8b9-ee95-4b90-b40f-6fadf126f4a3": {
+            "paths": [
+                "metadata/resource/GoogleMapsAPI"
+            ],
+            "className": "GoogleMapsAPI"
+        },
+        "ed1d1ab8-e274-432f-9438-3f6fee49b3e1": {
+            "paths": [
+                "metadata/resource/css"
+            ],
+            "className": "css"
+        },
+        "3df9ec36-3e99-4c30-ac13-8ff24939ddc7": {
+            "paths": [
+                "metadata/view/Manager",
+                "app/view/override/Manager.js",
+                "app/view/Manager.js"
+            ],
+            "className": "Manager"
+        },
+        "aac13a90-3699-4f61-9105-f06f88ee7d20": {
+            "paths": [
+                "metadata/view/NonManager",
+                "app/view/override/NonManager.js",
+                "app/view/NonManager.js"
+            ],
+            "className": "NonManager"
+        },
+        "2c4b8590-4fa4-453f-becc-ab2e5f4881ed": {
+            "paths": [
+                "metadata/model/Employee",
+                "app/model/override/Employee.js",
+                "app/model/Employee.js"
+            ],
+            "className": "Employee"
+        },
+        "9b85f6bf-d83a-4ad5-ba3d-7bf982d5486b": {
+            "paths": [
+                "metadata/store/Employee",
+                "app/store/override/Employee.js",
+                "app/store/Employee.js"
+            ],
+            "className": "Employee"
+        },
+        "37dcde47-044a-4501-941e-1ab8dffc27c1": {
+            "paths": [
+                "metadata/view/TimeCardEditor",
+                "app/view/override/TimeCardEditor.js",
+                "app/view/TimeCardEditor.js"
+            ],
+            "className": "TimeCardEditor"
+        },
+        "bd319ae8-ad11-41e3-b792-cfd311677c2e": {
+            "paths": [
+                "metadata/view/TimeCardEditorEmployeeList",
+                "app/view/override/TimeCardEditorEmployeeList.js",
+                "app/view/TimeCardEditorEmployeeList.js"
+            ],
+            "className": "TimeCardEditorEmployeeList"
+        },
+        "596bf57b-b13d-43e8-9345-cb5ef24a74c0": {
+            "paths": [
+                "metadata/controller/TimeCardEditor",
+                "app/controller/override/TimeCardEditor.js",
+                "app/controller/TimeCardEditor.js"
+            ],
+            "className": "TimeCardEditor"
+        },
+        "7318f6af-04d7-4ae9-9444-a528a2b97ed3": {
+            "paths": [
+                "metadata/store/TimeCardEditor",
+                "app/store/override/TimeCardEditor.js",
+                "app/store/TimeCardEditor.js"
+            ],
+            "className": "TimeCardEditor"
+        },
+        "b019a837-e5d1-419b-8034-913a513a10b3": {
+            "paths": [
+                "metadata/view/TimeCardEditorItemList",
+                "app/view/override/TimeCardEditorItemList.js",
+                "app/view/TimeCardEditorItemList.js"
+            ],
+            "className": "TimeCardEditorItemList"
+        },
+        "32f6ce96-ddc4-4ef7-89b8-61c93cd4698e": {
+            "paths": [
+                "metadata/view/TimeCardEditorItemForm",
+                "app/view/override/TimeCardEditorItemForm.js",
+                "app/view/TimeCardEditorItemForm.js"
+            ],
+            "className": "TimeCardEditorItemForm"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "b3352431-6003-41b5-8970-cbf0919d1a4e",
+            "5b4ec7f0-1916-4435-9266-bf2b344b8a0a",
+            "dcd23940-405c-4690-b26b-9880efec4210",
+            "3df9ec36-3e99-4c30-ac13-8ff24939ddc7",
+            "aac13a90-3699-4f61-9105-f06f88ee7d20",
+            "37dcde47-044a-4501-941e-1ab8dffc27c1",
+            "bd319ae8-ad11-41e3-b792-cfd311677c2e",
+            "b019a837-e5d1-419b-8034-913a513a10b3",
+            "32f6ce96-ddc4-4ef7-89b8-61c93cd4698e"
+        ],
+        "store": [
+            "4cc058e5-f604-4379-b341-2f6984d2ec01",
+            "9b85f6bf-d83a-4ad5-ba3d-7bf982d5486b",
+            "7318f6af-04d7-4ae9-9444-a528a2b97ed3"
+        ],
+        "controller": [
+            "dd935313-895a-40f0-bc06-88fa1f2272e6",
+            "d3606eb7-4150-42e5-b28f-718ce4573399",
+            "5483d1ff-c643-4f26-9de3-07666088f5e1",
+            "71447af2-ec15-4754-967e-e430e6fd7fa9",
+            "92b03a76-5cdb-401d-b073-0a6dee9ec35e",
+            "596bf57b-b13d-43e8-9345-cb5ef24a74c0"
+        ],
+        "model": [
+            "f84bfcdd-4a1b-473f-af82-1d34df10b80f",
+            "4fbb20c8-d319-447e-a1e7-4ef0a8f0ca1c",
+            "87dec0ef-d9e0-4f96-b684-b553bd594887",
+            "1c19b8f7-6f92-45ae-a062-92dcda6ad512",
+            "2c4b8590-4fa4-453f-becc-ab2e5f4881ed"
+        ],
+        "resource": [
+            "0f347aee-169d-4cde-9995-1de1397b74c4",
+            "d22fd8b9-ee95-4b90-b40f-6fadf126f4a3",
+            "ed1d1ab8-e274-432f-9438-3f6fee49b3e1"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

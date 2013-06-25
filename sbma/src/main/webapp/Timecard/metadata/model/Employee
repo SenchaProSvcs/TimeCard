@@ -1,0 +1,71 @@
+{
+    "type": "datamodel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Employee"
+    },
+    "id": "ExtBox1-ext-gen13977",
+    "designerId": "2c4b8590-4fa4-453f-becc-ab2e5f4881ed",
+    "cn": [
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field10",
+                "name": "userId",
+                "type": "int"
+            },
+            "designerId": "d39e5a5a-8340-4517-94ab-0f10f836fa36"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field11",
+                "name": "userName",
+                "type": "string"
+            },
+            "designerId": "c9271fe1-bc9d-4abc-932b-675f293edc24"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field12",
+                "name": "firstName",
+                "type": "string"
+            },
+            "designerId": "babd7b51-6922-4527-8adb-255b4be82f5b"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field13",
+                "name": "lastName",
+                "type": "string"
+            },
+            "designerId": "ad1b6493-1c0d-4add-89db-8c0528dd0691"
+        }
+    ]
+}
